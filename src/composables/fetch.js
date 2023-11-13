@@ -10,15 +10,14 @@ const getPokemon = async () => {
   }
 };
 
-
 const getPokemonById = async (pokemonId) => {
-    try {
-      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-form/${pokemonId}`);
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching Pokemon with ID ${pokemonId}:`, error);
-      return null;
-    }
-  };
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-form/${pokemonId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching Pokemon with ID ${pokemonId}:`, error);
+    return null;
+  }
+};
 
-export { getPokemon , getPokemonById};
+export { getPokemon, getPokemonById };

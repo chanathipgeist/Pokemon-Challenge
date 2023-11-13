@@ -3,13 +3,13 @@
 import Card from './components/Card'
 import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react';
-import { getPokemon } from './composables/fetch';
+import { getPokemon, getPokemonById } from './composables/fetch';
 function App() {
   const [pokemon,setpokemon]=useState([])
   const [currentPage,setCurrentPage]=useState(1)
   const ITEMS_PER_PAGE = 10;
   const [searchPoke, setSearchPoke] = useState('');
-
+  const [pokemonDetail,setPokemonDetail]= useState()
   useEffect(()=>{
     const fetchData = async () => {
       const data = await getPokemon(); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
@@ -19,7 +19,15 @@ function App() {
     fetchData();
   })
   
- 
+  useEffect(()=>{
+    const fetchData = async () => {
+      const data = await getPokemonById(25); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
+      setPokemonDetail(data);
+        };
+
+    fetchData();
+  })
+
   const filteredPokemon = pokemon.filter(pokemon =>
     pokemon.name.toLowerCase().includes(searchPoke.toLowerCase())
   );
@@ -137,7 +145,7 @@ function App() {
 
       <div className="grid grid-cols-5 gap-4  m-6 justify-center">
         {currentPokemon.map((pokemon, index) => (
-          <Card key={index} pokemon={pokemon} />
+          <Card key={index} pokemon={pokemon}/>
         ))}
       </div>
 
