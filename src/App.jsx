@@ -3,7 +3,7 @@
 import Card from './components/Card'
 import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react';
-import { getPokemon, getPokemonById } from './composables/fetch';
+import { getPokemon, getPokemonByName } from './composables/fetch';
 function App() {
   const [pokemon,setpokemon]=useState([])
   const [currentPage,setCurrentPage]=useState(1)
@@ -14,6 +14,7 @@ function App() {
     const fetchData = async () => {
       const data = await getPokemon(); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
       setpokemon(data);
+      // console.log(pokemon[0].name)
     };
 
     fetchData();
@@ -21,8 +22,9 @@ function App() {
   
   useEffect(()=>{
     const fetchData = async () => {
-      const data = await getPokemonById(25); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
+      const data = await getPokemonByName(); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
       setPokemonDetail(data);
+      //  console.log(pokemonDetail)
         };
 
     fetchData();
