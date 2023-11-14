@@ -1,8 +1,7 @@
-import { useState,useEffect } from 'react'
-import { getPokemon, getPokemonByName } from '../composables/fetch';
+import { useState } from 'react'
+import {  getPokemonByName } from '../composables/fetch';
 
 function Card({pokemon}) {
-  const [poke,setPoke]=useState()    
   const [pokemonDetail,setPokemonDetail]= useState()
 
     const fetchData = async () => {

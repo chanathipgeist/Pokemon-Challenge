@@ -3,7 +3,7 @@
 import Card from './components/Card'
 import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react';
-import { getPokemon, getPokemonByName } from './composables/fetch';
+import { getPokemon } from './composables/fetch';
 function App() {
   const [pokemon,setpokemon]=useState([])
   const [currentPage,setCurrentPage]=useState(1)
