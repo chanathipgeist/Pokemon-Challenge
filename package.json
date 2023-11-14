@@ -44,9 +44,7 @@
     "tailwindcss": "^3.3.5"
   },
   "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$"
   },
   "babel": {
     "presets": ["@babel/preset-env"],
@@ -54,6 +52,6 @@
       "test": {
         "presets": ["@babel/preset-env"]
       }
+    }
   }
-}
 }
