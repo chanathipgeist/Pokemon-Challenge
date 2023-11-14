@@ -9,10 +9,10 @@ function App() {
   const [currentPage,setCurrentPage]=useState(1)
   const ITEMS_PER_PAGE = 10;
   const [searchPoke, setSearchPoke] = useState('');
-  const [pokemonDetail,setPokemonDetail]= useState()
+  // const [pokemonDetail,setPokemonDetail]= useState()
   useEffect(()=>{
     const fetchData = async () => {
-      const data = await getPokemon(); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
+      const data = await getPokemon();
       setpokemon(data);
       // console.log(pokemon[0].name)
     };
@@ -20,15 +20,15 @@ function App() {
     fetchData();
   })
   
-  useEffect(()=>{
-    const fetchData = async () => {
-      const data = await getPokemonByName(); // เรียกใช้ฟังก์ชัน fetchPokemonData จากไฟล์ api.js
-      setPokemonDetail(data);
-      //  console.log(pokemonDetail)
-        };
+  // useEffect(()=>{
+  //   const fetchData = async () => {
+  //     const data = await getPokemonByName("pikachu"); 
+  //     setPokemonDetail(data);
+  //      console.log(pokemonDetail?.sprites.front_shiny)
+  //       };
 
-    fetchData();
-  })
+  //   fetchData();
+  // })
 
   const filteredPokemon = pokemon.filter(pokemon =>
     pokemon.name.toLowerCase().includes(searchPoke.toLowerCase())
@@ -147,7 +147,7 @@ function App() {
 
       <div className="grid grid-cols-5 gap-4  m-6 justify-center">
         {currentPokemon.map((pokemon, index) => (
-          <Card key={index} pokemon={pokemon}/>
+          <Card key={pokemon.name} pokemon={pokemon}/>
         ))}
       </div>
 
