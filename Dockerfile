@@ -2,6 +2,7 @@ FROM node:14-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
+RUN npm install tailwind
 COPY src/ ./src
 COPY public/ ./public
 RUN npm run build
