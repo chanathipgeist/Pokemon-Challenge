@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN  }}
 
       - name: secrets.GH_TOKEN
-        run: echo "${secrets.GH_TOKEN}"
+        run: echo "${{secrets.GH_TOKEN}}"
       - name: Lowercase the repo name and username
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
