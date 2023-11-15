@@ -2,7 +2,7 @@ name: Build and deploy a container to an Azure Web App
  
 env:
   AZURE_WEBAPP_NAME: chanathip-pokemon
-
+ 
 on:
   push:
     branches: [ "master" ]
