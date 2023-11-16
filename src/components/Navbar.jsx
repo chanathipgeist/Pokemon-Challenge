@@ -20,13 +20,13 @@ function Navbar() {
   };
 
   return (
-    <div className='w-full p-6 mb-10 bg-red-500 flex justify-between items-center'>
-      <span>CloudNC Pokédex Challenge</span>
-      <button onClick={toggleMusic}>
-        {isMusicOpen ? 'Pause Music' : 'Play Music'}
-      </button>
-      <audio ref={audioRef} src={sound} />
-    </div>
+<div className='w-full p-6 mb-10 bg-red-500 flex justify-between items-center text-white'>
+<span className="pl-10 text-3xl text-white"><span className="text-black">CloudNC</span> Pokédex Challenge</span>
+  <button onClick={toggleMusic}>
+    {isMusicOpen ? 'Pause Music' : 'Play Music'}
+  </button>
+  <audio ref={audioRef} src={sound} />
+</div>
   );
 }
 
