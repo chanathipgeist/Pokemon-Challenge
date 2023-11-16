@@ -133,9 +133,9 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <h1 className='flex justify-center text-4xl font-bold'>Pokémon List</h1>
+      <h1 className='flex justify-center text-5xl font-bold'>Pokémon List</h1>
        
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center m-4">
         <input
           type="text"
           placeholder="Search Pokemon"
@@ -145,7 +145,7 @@ function App() {
         />
       </div>
 
-      <div className="grid grid-cols-5 gap-4  m-6 justify-center">
+      <div className="grid grid-cols-5 gap-6 mx-60 justify-center">
         {currentPokemon.map((pokemon, index) => (
           <Card key={pokemon.name} pokemon={pokemon}/>
         ))}
