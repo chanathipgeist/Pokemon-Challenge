@@ -8,7 +8,7 @@ function Card({pokemon}) {
       const data = await getPokemonByName(pokemon.name); 
       setPokemonDetail(data);
     //    console.log(pokemonDetail?.id)
-       console.log(pokemonDetail?.sprites.front_shiny);
+      //  console.log(pokemonDetail?.sprites.front_shiny);
         };
 
         fetchData()
